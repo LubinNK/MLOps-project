@@ -120,12 +120,10 @@ def train(
 def save_all(model, model_parameters, save_name):
     model_dict = model.state_dict()
     tmp_save = [model_dict, model_parameters]
-    torch.save(
-        tmp_save, save_name
-    )  # не state_dict потому что у модели есть параметры, которые влияют на архитектуру
+    torch.save(tmp_save, save_name)
 
 
-if __name__ == "__main__":
+def main():
     n_epochs = 3
     save_name = "best_model.xyz"
     if len(sys.argv) > 1:
@@ -139,7 +137,7 @@ if __name__ == "__main__":
     X_train, y_train = X_train[idxs], y_train[idxs]
 
     # for final model:
-    train_loader_full = get_loader(X_train, y_train)
+    # train_loader_full = get_loader(X_train, y_train)
     # for validation purposes:
     train_loader = get_loader(X_train[:25000], y_train[:25000])
     val_loader = get_loader(X_train[25000:30000], y_train[25000:30000])
@@ -155,3 +153,7 @@ if __name__ == "__main__":
     )
 
     save_all(model, model_parameters, save_name)
+
+
+if __name__ == "__main__":
+    main()

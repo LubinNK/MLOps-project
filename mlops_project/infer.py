@@ -34,7 +34,7 @@ def validate(model, test_loader, device):
     return model_answer, accur
 
 
-if __name__ == "__main__":
+def main():
     model_name = "best_model.xyz"
     save_name = "test_results.csv"
     if len(sys.argv) > 1:
@@ -51,3 +51,7 @@ if __name__ == "__main__":
     data = pd.DataFrame(model_answer)
     data.to_csv(save_name, sep="\t", encoding="utf-8")
     print(f"Test Accuracy: {accuracy}")
+
+
+if __name__ == "__main__":
+    main()
