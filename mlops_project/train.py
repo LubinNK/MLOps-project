@@ -125,7 +125,7 @@ def save_all(model, model_parameters, save_name):
 
 def main():
     n_epochs = 3
-    save_name = "data/best_model.xyz"
+    save_name = "best_model.xyz"
     if len(sys.argv) > 1:
         n_epochs = int(sys.argv[1])
         if len(sys.argv) > 2:
