@@ -2,7 +2,7 @@
 name = "mlops-project"
 version = "0.1.0"
 description = ""
-authors = ["Nikolay Lubin <nklubin@avito.ru>"]
+authors = ["Nikolay Lubin <lubin.nk@physetch.edu>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
