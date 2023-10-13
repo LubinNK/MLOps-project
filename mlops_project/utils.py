@@ -46,11 +46,11 @@ def load_mnist(flatten=False, train=True):
 
     # We can now download and read the training and test set images and labels.
     if train:
-        X = load_mnist_images("train-images-idx3-ubyte.gz")
-        y = load_mnist_labels("train-labels-idx1-ubyte.gz")
+        X = load_mnist_images("data/train-images-idx3-ubyte.gz")
+        y = load_mnist_labels("data/train-labels-idx1-ubyte.gz")
     else:
-        X = load_mnist_images("t10k-images-idx3-ubyte.gz")
-        y = load_mnist_labels("t10k-labels-idx1-ubyte.gz")
+        X = load_mnist_images("data/t10k-images-idx3-ubyte.gz")
+        y = load_mnist_labels("data/t10k-labels-idx1-ubyte.gz")
 
     if flatten:
         X = X.reshape([X.shape[0], -1])

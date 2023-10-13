@@ -35,8 +35,8 @@ def validate(model, test_loader, device):
 
 
 def main():
-    model_name = "best_model.xyz"
-    save_name = "test_results.csv"
+    model_name = "data/best_model.xyz"
+    save_name = "data/test_results.csv"
     if len(sys.argv) > 1:
         model_name = sys.argv[1]
         if len(sys.argv) > 2:
