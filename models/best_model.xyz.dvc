@@ -1,0 +1,5 @@
+outs:
+- md5: df7602cfdc7040b4e0890b3ccf0ed4f4
+  size: 199663
+  hash: md5
+  path: best_model.xyz
