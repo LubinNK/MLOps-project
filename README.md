@@ -11,7 +11,7 @@
 
 Далее запускаем:
 
-    python MLOps_project/train.py
+    python mlops_project/train.py
 
 Параметры для этапа train указаны в конфиге. При отсутсвии данных подгружаются через dvc.
 
@@ -19,7 +19,7 @@
 
 Запуск сервера:
 
-    python MLOps_project/run_server.py --port=8890
+    python mlops_project/run_server.py --port=8890
 
 Выбор порта за пользователем. После получаем адрес, по которому можно работать с моделью:
 
@@ -27,6 +27,6 @@
 
 С этим адресом нужно запустить test_server
 
-    python MLOps_project/test_server.py --servind_addr=http://127.0.0.1:8890
+    python mlops_project/test_server.py --servind_addr=http://127.0.0.1:8890
 
 /invocations добавляется само, так что это не нужно делать при запуске.
