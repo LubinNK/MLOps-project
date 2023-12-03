@@ -1,6 +1,11 @@
 *.gz
 *.csv
 *.xyz
+.logs**
+outputs**
+mlruns**
+/mlflow
+/mlartifacts
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
