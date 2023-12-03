@@ -27,7 +27,7 @@ training:
   num_workers: 1
   train_part: 0.5
   batch_size: 40
-  epochs: 1
+  epochs: 3
   optimizer: adam
   device: cpu
 
