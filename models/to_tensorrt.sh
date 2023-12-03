@@ -1,0 +1,9 @@
+trtexec --onnx=./best_model.onnx \
+--saveEngine=./best_model.plan \
+--minShapes=IMAGES:1x1x28x28\
+--optShapes=IMAGES:8x1x28x28 \
+--maxShapes=IMAGES:32x1x28x28 \
+--inputIOFormats=fp32:chw \
+--profilingVerbosity=detailed \
+--builderOptimizationLevel=5 \
+--hardwareCompatibilityLevel=ampere+
