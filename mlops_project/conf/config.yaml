@@ -1,0 +1,44 @@
+data:
+  name: MNIST
+  path: ./data/
+  sourse: http://yann.lecun.com/exdb/mnist/
+  train_data_file: train-images-idx3-ubyte.gz
+  train_labels_file: train-labels-idx1-ubyte.gz
+  test_data_file: t10k-images-idx3-ubyte.gz
+  test_labels_file: t10k-labels-idx1-ubyte.gz
+
+model:
+  name: NET
+  save_path: ./models/
+  save_name: best_model.xyz
+  parameters:
+    k: 4
+  onnx_parameters:
+    export_to_onnx: True
+    onnx_path: ./models/best_model.onnx
+    mlflow_onnx_export_path: ./models/onnx_model
+    input_shape: [1, 28, 28]
+
+training:
+  log_every_n_steps: 20
+  num_workers: 8
+  train_part: 0.5
+  batch_size: 40
+  epochs: 4
+  optimizer: adam
+  device: cpu
+
+infer:
+  model_path: ./models/
+  model_name: best_model.xyz
+  infer_save_path: ./infer/
+  infer_name: test_results.csv
+  batch_size: 90
+
+# ________________________
+
+loggers:
+  mlflow:
+    experiment_name: first_exp
+    tracking_uri: http://localhost:8888
+    #file:./.logs/my-mlflow-log

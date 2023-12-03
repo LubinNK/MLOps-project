@@ -1,0 +1,8 @@
+defaults:
+  - base_train
+
+train_part: 0.5
+batch_size: 40
+epochs: 4
+optimizer: adam
+device: cpu
