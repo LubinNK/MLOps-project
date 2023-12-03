@@ -1,3 +1,6 @@
+# defaults:
+  # - Bconfig
+
 data:
   name: MNIST
   path: ./data/
@@ -21,10 +24,10 @@ model:
 
 training:
   log_every_n_steps: 20
-  num_workers: 8
+  num_workers: 1
   train_part: 0.5
   batch_size: 40
-  epochs: 4
+  epochs: 1
   optimizer: adam
   device: cpu
 
@@ -34,6 +37,8 @@ infer:
   infer_save_path: ./infer/
   infer_name: test_results.csv
   batch_size: 90
+  inference_addr: http://127.0.0.1:8889/invocations
+  inference_port: 8889
 
 # ________________________
 

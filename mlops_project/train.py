@@ -10,19 +10,18 @@ from utils import convert_to_onnx, save_all
 from data import MyDataModule
 
 cs = ConfigStore.instance()
-cs.store(name="config", node=Config)
+cs.store(name="config", group="first", node=Config)
 
 
 @hydra.main(config_path="conf", config_name="config", version_base="1.3")
 def main(cfg: Config):
     print("start")
-    # pl.seed_everithing(32)
     torch.set_float32_matmul_precision("medium")
 
     dm = MyDataModule(cfg=cfg)
 
     model = CNN_new(conf=cfg.model)
-
+    print("\n\nMODEL IS SETTED\n\n")
     loggers = [
         pl.loggers.MLFlowLogger(
             experiment_name=cfg.loggers.mlflow.experiment_name,

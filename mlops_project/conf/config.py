@@ -53,6 +53,8 @@ class Infer:
     infer_save_path: str
     infer_name: str
     batch_size: int
+    inference_addr: str
+    inference_port: int
 
 
 @dataclass
