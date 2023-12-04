@@ -1,10 +1,23 @@
+import os
+
 import mlflow
 import numpy as np
 import onnx
 import onnxruntime as ort
 import torch
-from conf.config import OnnxParameters
+from conf.config import Model, OnnxParameters
 from mlflow.models import infer_signature
+from model import CNN_new
+
+
+def load_model(model_path, model_name):
+    filename = model_path + model_name
+    assert os.path.isfile(filename), "file do not exist"
+    [model_state_dict, model_parameters] = torch.load(filename)
+    conf = Model(**model_parameters)
+    model = CNN_new(conf)
+    model.load_state_dict(model_state_dict)
+    return model
 
 
 def save_all(model, model_parameters, save_path, save_name):

@@ -20,6 +20,7 @@ onnxruntime = "^1.16.3"
 onnx = "^1.15.0"
 pydantic = "^2.5.2"
 fire = "^0.5.0"
+tritonclient = "^2.41.0"
 
 
 [build-system]

@@ -25,8 +25,10 @@ def main(cfg: Config):
         pl.loggers.MLFlowLogger(
             experiment_name=cfg.loggers.mlflow.experiment_name,
             tracking_uri=cfg.loggers.mlflow.tracking_uri,
+            artifact_location="conf/config.yaml",
         )
     ]
+    loggers[0].log_hyperparams(cfg)
 
     callbacks = [
         pl.callbacks.LearningRateMonitor(logging_interval="step"),

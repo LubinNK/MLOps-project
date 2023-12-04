@@ -1,0 +1,30 @@
+name: "onnx-model"
+platform: "onnxruntime_onnx"
+max_batch_size: 32
+
+input[
+    {
+        name: "IMAGES"
+        data_type: TYPE_FP32
+        dims: [1, 28, 28]
+    }
+]
+
+output [
+    {
+        name: "CLASS_PROBS"
+        data_type: TYPE_FP32
+        dims: [ 10 ]
+    }
+]
+
+instance_group[
+    {
+        count: 1
+        kind: KIND_CPU
+    }
+]
+
+dynamic_batching{ max_queue_delay_microseconds: 2000,
+        preferred_batch_size: [8, 16, 32]
+    }
